@@ -101,6 +101,12 @@ io.sockets.on('connection', (socket) => {
   socket.on('announcements', function (data) {
     console.log('Got announcement:', data.message);
     socket.broadcast.emit('announcements', data);
+    socket.broadcast.emit('setup', data);
+    
+  });
+
+  socket.on('setup', function (data) {
+    socket.broadcast.emit('setup', data);
   });
 
   socket.on('movement', function (data) {
