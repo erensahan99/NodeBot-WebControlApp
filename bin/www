@@ -113,4 +113,8 @@ io.sockets.on('connection', (socket) => {
     socket.broadcast.emit('movement', data);
   });
 
+  socket.on('message', function (data) {
+    console.log(data);
+    socket.broadcast.emit('message', data);
+  });
 });
