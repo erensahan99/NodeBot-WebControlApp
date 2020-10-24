@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  
+  label Motor 0
+  input.RSSICoefficient(id='motor0', value='90', type='range', min='0', max='180', step='1', oninput= 'abc(this)')
+  br
+  br
+  label Motor 1
+  input.RSSICoefficient(id='motor1', value='90', type='range', min='0', max='180', step='1', oninput= 'abc(this)')
+  br
+  br
+  label Motor 2
+  input.RSSICoefficient(id='motor2', value='90', type='range', min='0', max='180', step='1', oninput= 'abc(this)')
+  br
+  br
+  label Kıskaç
+  input.RSSICoefficient(id='kiskac', value='0', type='range', min='0', max='180', step='1', oninput= 'abc(this)')
+  br
+  br
+
+  script(src='/socket.io/socket.io.js')
+  script(src='javascripts/app.js')
