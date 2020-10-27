@@ -1,5 +1,5 @@
 :root {
-  --body-bg: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  --body-bg: linear-gradient(135deg, #ff5 0%, #00f 100%);
   --msger-bg: #fff;
   --border: 2px solid #ddd;
   --left-msg-bg: #ececec;
@@ -31,10 +31,10 @@ body {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  width: 100%;
-  max-width: 867px;
+  width: 20%;
+  max-width: 567px;
   margin: 25px 10px;
-  height: calc(100% - 50px);
+  height: calc(100% - 200px);
   border: var(--border);
   border-radius: 5px;
   background: var(--msger-bg);

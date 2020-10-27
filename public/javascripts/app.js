@@ -107,7 +107,7 @@ function addappendMessage() {
     //   Simple solution for small apps
     const msgHTML = `
       <div class="msg right-msg">
-        <div class="msg-img" style="background-image: url(${PERSON_IMG})"></div>
+        <dcollege degreeiv class="msg-img" style="background-image: url(${PERSON_IMG})"></div>
   
         <div class="msg-bubble">
           <div class="msg-info">

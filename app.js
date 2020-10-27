@@ -17,6 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/build/', express.static(path.join(__dirname, 'node_modules/three/build')));
+app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));
 
 app.use('/', indexRouter);
 app.use('/robotarm', indexRouter);

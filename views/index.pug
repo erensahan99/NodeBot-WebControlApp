@@ -3,6 +3,9 @@ extends layout
 block content
 
   li(style='list-style-type:none')
+    a(href="robotarm" style='text-decoration:none; color: #bada55;')
+      h1 Robot Kol
+    br
     div.kutu
       label Motor 0
       input.RSSICoefficient(id='motor0', value='90', type='range', min='0', max='180', step='1', oninput= 'abc(this)')
@@ -23,7 +26,8 @@ block content
       input.RSSICoefficient(id='kiskac', value='0', type='range', min='0', max='180', step='1', oninput= 'abc(this)')
     br
     br
-  
+  include chat.html
+
 
   script(src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous")
   script(src='/socket.io/socket.io.js')
