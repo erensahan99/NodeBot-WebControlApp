@@ -26,6 +26,12 @@ window.onload = function () {
         document.getElementById(data.id).value = data.value
     });
 
+    socket.on('spot', function (data) {
+        // console.log(data);
+
+        document.getElementById(data.id).value = data.value
+    });
+
 }
 const abc = function (value) {
     socket.emit('movement', {
@@ -35,7 +41,13 @@ const abc = function (value) {
     // console.log(value.id + ' ' + value.value);
 }
 
-
+const xyz = function (value) {
+    socket.emit('spot', {
+        id: value.id,
+        value: value.value
+    });
+    // console.log(value.id + ' ' + value.value);
+}
 
 const msgerForm = $(".msger-inputarea");
 const msgerInput = $(".msger-input");

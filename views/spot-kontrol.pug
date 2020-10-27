@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+  h1(style='text-decoration:none; color: #bada55; text-align:center;') Spot Kontrol
+    div.kutu(style='border:5px solid black;')
+      div
+        label Dirsekler
+        input.RSSICoefficient(id='motor0', value='90', type='range', min='0', max='180', step='1', oninput= 'xyz(this)')
+        br  
+        br
+      div
+        label Omuz İleri-Geri
+        input.RSSICoefficient(id='motor1', value='90', type='range', min='0', max='180', step='1', oninput= 'xyz(this)')
+        br
+        br
+      div
+        label Omuz Yukarı Aşağı
+        input.RSSICoefficient(id='motor2', value='90', type='range', min='0', max='180', step='1', oninput= 'xyz(this)')
+        br
+        br
+      div
+        label Servo0
+        input.RSSICoefficient(id='kiskac', value='90', type='range', min='0', max='180', step='1', oninput= 'xyz(this)')
+
+  script(src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous")
+  script(src='/socket.io/socket.io.js')
+  script(src='javascripts/app.js')
+  script(src='https://use.fontawesome.com/releases/v5.0.13/js/all.js')

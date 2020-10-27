@@ -113,6 +113,14 @@ io.sockets.on('connection', (socket) => {
     socket.broadcast.emit('movement', data);
   });
 
+  socket.on('spot', function (data) {
+    socket.broadcast.emit('spot', data);
+  });
+
+  socket.on('motor', function (data) {
+    socket.broadcast.emit('motor', data);
+  });
+
   socket.on('message', function (data) {
     console.log(data);
     socket.broadcast.emit('message', data);

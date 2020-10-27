@@ -19,9 +19,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/build/', express.static(path.join(__dirname, 'node_modules/three/build')));
 app.use('/jsm/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));
+//app.use('/stlloader/', express.static(path.join(__dirname, 'node_modules/three/examples/jsm')));
 
 app.use('/', indexRouter);
-app.use('/robotarm', indexRouter);
+app.use('/spot-nano', indexRouter);
+app.use('/spot-kontrol', indexRouter);
+app.use('/robot-arm', indexRouter);
+app.use('/rc-arac', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
