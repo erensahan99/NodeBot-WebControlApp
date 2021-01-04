@@ -20,6 +20,8 @@ state.changeState = function () {
             case "1":
                 $("html").css("background-image", "url(../images/tv-static.gif)");
                 $(".state-text").css("width", "45%");
+                $("html").css("  background-size", "auto");
+                $("html").css("  background-repead", "round");
                 $(".state-text").text("Connecting");
                 $(".control-panel").hide();
                 dot = 0;
@@ -35,6 +37,7 @@ state.changeState = function () {
             case "2":
                 $("html").css("background-image", "url(../images/no-signal.gif)");
                 $(".state-text").css("width", "60%");
+                $("html").css("background-size", "50%");
                 $(".state-text").text("Connection Failed");
                 $(".control-panel").hide();
                 break;
@@ -52,11 +55,22 @@ window.onload = function () {
     socket = io.connect('/');
 
     socket.on('connect', function () {
-        state.set("0");
         console.log('connected. id= ' + socket.id);
         socket.emit('announcements', {
             message: 'A new user has joined! ' + socket.id
         });
+    });
+
+    socket.on('conState', function (data) {
+        if (!data.localeCompare("connected")) {
+            state.set("0");
+        }
+        else if (!data.localeCompare("error")) {
+            state.set("2");
+        }
+        else if (!data.localeCompare("disconnected")) {
+            state.set("1");
+        }
     });
 
     socket.on('video', function (data) {
@@ -72,17 +86,13 @@ window.onload = function () {
 
     socket.on('announcements', function (data) {
         console.log('Got announcement:', data.message);
-    }); +
-
-        socket.on('setup', function (data) {
-            document.getElementById("speed").value = data.speed
-        });
-
-    socket.on('movement', function (data) {
-        // document.getElementById(data.id).value = data.value;
     });
+
+    socket.on('setup', function (data) {
+        document.getElementById("speed").value = data.speed
+    });
+
     socket.on('motor', function (data) {
-        // document.getElementById(data.id).value = data.value;
         console.log(data);
     });
 }
