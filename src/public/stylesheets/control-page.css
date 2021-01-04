@@ -1,0 +1,95 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+/* disable text selection */
+*{
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+html {
+  height: 100%;
+  background-size: cover;
+}
+
+.keys {
+  font-family: 'Lato', sans-serif;    
+  text-align: center;
+  width: 330px;
+  height: 200px;
+  margin: auto;
+}
+
+.arr {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  background: grey;
+  color: white;
+  font-size: 50px;
+  border-right: 10px solid darken(grey, 20);
+  border-bottom: 10px solid darken(grey, 20);
+  border-left: 10px solid darken(grey, 15);
+  border-top: 10px solid darken(grey, 10);  
+  display: inline-block;
+  margin: 5px;
+  transition: all .05s linear;
+  user-select: none;
+}
+
+.pressed {
+  border-bottom: 8px solid darken(grey, 20);
+  text-shadow: 0 0 10px white;
+  transform: translate(0, 2px);
+}
+
+.names {
+  font-size: 18px;  
+  font-family: 'Lato', sans-serif;    
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 10px rgb(0, 0, 0), 0 0 10px rgb(255, 255, 255), 0 0 10px rgb(0, 0, 0), 0 0 10px white;
+}
+
+.control-panel{
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.state-box{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+  width: 99%;
+  margin: 0;
+
+  font-size: 100px;  
+  font-family: 'Lato', sans-serif;    
+  color: white;
+  
+  text-shadow: 0 0 10px rgb(0, 0, 0), 0 0 10px rgb(255, 255, 255), 0 0 10px rgb(0, 0, 0), 0 0 10px white;
+}
+
+.state-text{
+  width: 45%;
+  text-align: left;
+}
+
+#live{
+  position: fixed;
+  z-index: -999;
+  top: 0;
+  left: 0;
+  height:100%;
+  width:100%;
+
+}

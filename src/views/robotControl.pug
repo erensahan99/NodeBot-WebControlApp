@@ -1,37 +1,39 @@
-.keys
-    .up.arr
-        i.fa.fa-arrow-up
-    br
-    .left.arr
-        i.fa.fa-arrow-left
-    .down.arr
-        i.fa.fa-arrow-down
-    .right.arr
-        i.fa.fa-arrow-right
-    
-br
-br
-br
-br
-.names  
-    input.RSSICoefficient(id='hiz', value='150', type='range', min='0', max='255', step='1', oninput= 'abc(this)' style='width:300px;')
-    .uptext
-    .downtext
-    .lefttext
-    .righttext
-.b
-.a
-script.
-    PleaseRotateOptions = {
-        message: "Lütfen Cihazınızı Yatay Konuma Getirin ve Sayfayı Yenileyin",
-        subMessage: "",
-        allowClickBypass: false,
-        onlyMobile: true,
-    };
-link(href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet')
-link(rel='stylesheet', href='/stylesheets/rcarac.css')
+extends ./common/layout
 
-script(src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous")
-script(src='/socket.io/socket.io.js')
-script(src='javascripts/rcarac-app.js')
-script(src='javascripts/pleaserotate.js')
+block content
+    img#live
+
+    .state-box
+        h3.state-text
+    .control-panel
+        .keys
+            .up.arr
+                i.fa.fa-arrow-up
+            br
+            .left.arr
+                i.fa.fa-arrow-left
+            .down.arr
+                i.fa.fa-arrow-down
+            .right.arr
+                i.fa.fa-arrow-right
+        br
+        br
+        h4.names Speed : 
+            input(id='speed', value='150', type='range', min='0', max='255', step='1', oninput= 'abc(this)' style='width:300px;')
+
+    script.
+        PleaseRotateOptions = {
+            message: "Lütfen Cihazınızı Yatay Konuma Getirin ve Sayfayı Yenileyin",
+            subMessage: "",
+            allowClickBypass: false,
+            onlyMobile: true,
+        };
+    link(href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet')
+    link(rel='stylesheet', href='/stylesheets/control-page.css')
+
+    script(src="https://code.jquery.com/jquery-3.3.1.min.js"  crossorigin="anonymous")
+    script(src='/socket.io/socket.io.js')
+    script(src='javascripts/app.js')
+    script(src='javascripts/button-controls.js')
+    script(src='javascripts/pleaserotate.js')
+    script(src='javascripts/konami.js')

@@ -17,21 +17,16 @@ module.exports =  (server) => {
             socket.broadcast.emit('setup', data);
         });
 
-        socket.on('movement', function (data) {
-            socket.broadcast.emit('movement', data);
+        socket.on('arm', function (data) {
+            socket.broadcast.emit('arm', data);
         });
-
-        socket.on('spot', function (data) {
-            socket.broadcast.emit('spot', data);
-        });
-
+        
         socket.on('motor', function (data) {
             socket.broadcast.emit('motor', data);
         });
 
-        socket.on('message', function (data) {
-            console.log(data);
-            socket.broadcast.emit('message', data);
+        socket.on('video', function (data) {
+            socket.broadcast.emit('video', data);
         });
     });
 }
