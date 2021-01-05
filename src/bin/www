@@ -5,9 +5,8 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('nodebot-spot-server:server');
+var debug = require('debug')('nodebot-server:server');
 var http = require('http');
-
 
 /**
  * Get port from environment and store in Express.

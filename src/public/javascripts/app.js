@@ -13,15 +13,17 @@ state.changeState = function () {
         clearInterval(dotInterval);
         switch (this.value) {
             case "0":
+                $("#live").css("display", "block");
                 $("html").css("background-image", "linear-gradient(135deg, #ff5 0%, #00f 100%)");
                 $(".state-text").text("");
                 $(".control-panel").show();
                 break;
             case "1":
                 $("html").css("background-image", "url(../images/tv-static.gif)");
-                $(".state-text").css("width", "45%");
+                $("#live").css("display", "none");
                 $("html").css("  background-size", "auto");
                 $("html").css("  background-repead", "round");
+                $(".state-text").css("width", "45%");
                 $(".state-text").text("Connecting");
                 $(".control-panel").hide();
                 dot = 0;
@@ -36,8 +38,9 @@ state.changeState = function () {
                 break;
             case "2":
                 $("html").css("background-image", "url(../images/no-signal.gif)");
-                $(".state-text").css("width", "60%");
                 $("html").css("background-size", "50%");
+                $("#live").css("display", "none");
+                $(".state-text").css("width", "60%");
                 $(".state-text").text("Connection Failed");
                 $(".control-panel").hide();
                 break;

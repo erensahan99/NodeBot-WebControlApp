@@ -1,5 +1,5 @@
 
-module.exports =  (server) => {
+module.exports = (server) => {
     var socket = require('socket.io');
     var io = socket(server);
 
@@ -13,7 +13,7 @@ module.exports =  (server) => {
         socket.on('setup', function (data) {
             socket.broadcast.emit('setup', data);
         });
-        
+
         socket.on('motor', function (data) {
             socket.broadcast.emit('motor', data);
         });
