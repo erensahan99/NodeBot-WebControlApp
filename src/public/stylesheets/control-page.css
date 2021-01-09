@@ -12,7 +12,20 @@
 }
 
 html {
+  background-size: 100% !important;
+  width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+}
+
+body{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
 }
 
 .keys {
@@ -83,12 +96,31 @@ html {
   text-align: left;
 }
 
-#live{
-  position: fixed;
-  z-index: -999;
+
+.frame{
+  height: 100%;
+  width: 100%;
   top: 0;
   left: 0;
-  height:100%;
-  width:100%;
+  position: absolute;
+}
 
+#live{
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+
+  position: fixed;
+  z-index: -999;
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

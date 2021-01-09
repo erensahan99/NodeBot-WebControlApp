@@ -1,5 +1,4 @@
 :root {
-  --body-bg: linear-gradient(135deg, #ff5 0%, #00f 100%);
   --msger-bg: #fff;
   --border: 2px solid #ddd;
   --left-msg-bg: #ececec;
@@ -23,7 +22,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: var(--body-bg);
   font-family: Helvetica, sans-serif;
 }
 

@@ -37,7 +37,7 @@ state.changeState = function () {
                 }, 750);
                 break;
             case "2":
-                $("html").css("background-image", "url(../images/no-signal.gif)");
+                $("html").css("background-image", "url(../images/no-signal.gif) !important");
                 $("html").css("background-size", "50%");
                 $("#live").css("display", "none");
                 $(".state-text").css("width", "60%");
@@ -50,6 +50,12 @@ state.changeState = function () {
                 break;
         }
     }
+}
+
+window.onresize = function() {
+    $("#live").css("height", $("html").width());
+    $("#live").css("width", $("html").height());
+    
 }
 
 window.onload = function () {
@@ -98,4 +104,7 @@ window.onload = function () {
     socket.on('motor', function (data) {
         console.log(data);
     });
+
+    $("#live").css("height", $("html").width());
+    $("#live").css("width", $("html").height()-20);
 }
