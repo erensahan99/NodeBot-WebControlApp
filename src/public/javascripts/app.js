@@ -37,7 +37,7 @@ state.changeState = function () {
                 }, 750);
                 break;
             case "2":
-                $("html").css("background-image", "url(../images/no-signal.gif) !important");
+                $("html").css("background-image", "url(../images/no-signal.gif)");
                 $("html").css("background-size", "50%");
                 $("#live").css("display", "none");
                 $(".state-text").css("width", "60%");

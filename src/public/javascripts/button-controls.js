@@ -7,7 +7,7 @@ const abc = function (value) {
     // console.log(value.id + ' ' + value.value);
 }
 
-
+var flashState = 0;
 $(document).keydown(function (e) {
     if (e.which == 37) {
         socket.emit('motor', {
@@ -37,10 +37,16 @@ $(document).keydown(function (e) {
         });
         $('.down').addClass('pressed');
         $('.down').css('transform', 'translate(0, 2px)');
-    } else if (e.which == 66) {
-        $('.b').text('B');
-    } else if (e.which == 65) {
-        $('.a').text('A');
+    }
+    else if (e.which == 69) {
+        if (flashState == 0) {
+            socket.emit('flash', { value: "on" });
+            flashState = 1;
+        }
+        else if (flashState == 1) {
+            socket.emit('flash', { value: "off" });
+            flashState = 0;
+        }
     }
 });
 
@@ -76,7 +82,7 @@ $(document).keyup(function (e) {
     } else if (e.which == 66) {
 
     } else if (e.which == 65) {
-        
+
     }
 });
 

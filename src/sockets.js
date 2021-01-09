@@ -25,5 +25,9 @@ module.exports = (server) => {
         socket.on('conState', function (data) {
             socket.broadcast.emit('conState', data);
         });
+
+        socket.on('flash', function (data) {
+            socket.broadcast.emit('flash', data);
+        });
     });
 }
