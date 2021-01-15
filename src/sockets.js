@@ -29,5 +29,21 @@ module.exports = (server) => {
         socket.on('flash', function (data) {
             socket.broadcast.emit('flash', data);
         });
+
+        socket.on('rgb', function (data) {
+            socket.broadcast.emit('rgb', data);
+        });
+        
+        socket.on('laser', function (data) {
+            socket.broadcast.emit('laser', data);
+        });
+        
+        socket.on('kiskac', function (data) {
+            socket.broadcast.emit('kiskac', data);
+        });
+
+        socket.on('kol', function (data) {
+            socket.broadcast.emit('kol', data);
+        });
     });
 }

@@ -7,7 +7,11 @@ const abc = function (value) {
     // console.log(value.id + ' ' + value.value);
 }
 
-var flashState = 0;
+flashState = 0;
+rgbState = 0;
+laserState = 0;
+kiskacState = 0;
+
 $(document).keydown(function (e) {
     if (e.which == 37) {
         socket.emit('motor', {
@@ -38,7 +42,7 @@ $(document).keydown(function (e) {
         $('.down').addClass('pressed');
         $('.down').css('transform', 'translate(0, 2px)');
     }
-    else if (e.which == 69) {
+    else if (e.which == 83) {
         if (flashState == 0) {
             socket.emit('flash', { value: "on" });
             flashState = 1;
@@ -48,6 +52,46 @@ $(document).keydown(function (e) {
             flashState = 0;
         }
     }
+    else if (e.which == 65) {
+        if (rgbState == 0) {
+            socket.emit('rgb', { value: "on" });
+            rgbState = 1;
+        }
+        else if (rgbState == 1) {
+            socket.emit('rgb', { value: "off" });
+            rgbState = 0;
+        }
+    }
+    else if (e.which == 68) {
+        if (laserState == 0) {
+            socket.emit('laser', { value: "on" });
+            laserState = 1;
+        }
+        else if (laserState == 1) {
+            socket.emit('laser', { value: "off" });
+            laserState = 0;
+        }
+    }
+    else if (e.which == 32) {
+        if (kiskacState == 0) {
+            socket.emit('kiskac', { value: "on" });
+            kiskacState = 1;
+        }
+        else if (kiskacState == 1) {
+            socket.emit('kiskac', { value: "off" });
+            kiskacState = 0;
+        }
+    }
+    else if (e.which == 81) {
+        socket.emit('kol', { value: "sol" });
+    }
+    else if (e.which == 87) {
+        socket.emit('kol', { value: "ortala" });
+    }
+    else if (e.which == 69) {
+        socket.emit('kol', { value: "sag" });
+    }
+
 });
 
 $(document).keyup(function (e) {
@@ -79,11 +123,8 @@ $(document).keyup(function (e) {
             id: 'dur',
             value: 0
         });
-    } else if (e.which == 66) {
-
-    } else if (e.which == 65) {
-
     }
+
 });
 
 $('.left').mousedown(function () {
